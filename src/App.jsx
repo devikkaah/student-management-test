@@ -8,9 +8,20 @@ function App() {
   const [students, setStudents] = useState([])
 
     const refreshStudents = async () => {
+    try {
         const response = await getStudents()
-        setStudents(response.data)
+
+        if (Array.isArray(response.data)) {
+            setStudents(response.data)
+        } else {
+            setStudents([])
+        }
+
+    } catch (error) {
+        console.log(error)
+        setStudents([])
     }
+}
 
     useEffect(() => {
         refreshStudents()

@@ -24,7 +24,7 @@ function StudentTable({ students, refreshStudents }) {
                         </tr>
                     </thead>
                     <tbody>
-                        {students.map((student) => (
+                        {Array.isArray(students) && students.map((student) => (
                             <tr key={student.id}>
                                 <td>{student.id}</td>
                                 <td>{student.name}</td>

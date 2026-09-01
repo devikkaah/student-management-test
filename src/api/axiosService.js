@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = 'https://student-management-api-2p4p.onrender.com'
+const BASE_URL = 'https://student-management-api-2p4p.onrender.com/students'
 
 export const getStudents = () => {
     return axios.get(BASE_URL)
